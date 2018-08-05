@@ -44,12 +44,13 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View styles={styles.entrada}>
-          <TextInput></TextInput>
-          <TextInput></TextInput>
+          <TextInput autoCapitalize="none" placeholder="Altura" keyboardType="numeric" style={styles.input} onChangeText={(altura)=>{this.setState({altura})}}></TextInput>
+          <TextInput autoCapitalize="none" placeholder="Massa" keyboardType="numeric" style={styles.input} onChangeText={(massa)=>{this.setState({massa})}}></TextInput>
         </View>
+        <TouchableOpacity ></TouchableOpacity>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+       
       </View>
     );
   }
@@ -69,5 +70,22 @@ const styles = StyleSheet.create({
     width:"50%",
     fontSize:50,
     marginTop:34,
-  }
+  },
+  button: {
+    backgroundColor:"#9ACD32",
+  },
+  buttontext: {
+    textAlign:"center",
+    padding:30,
+    fontSize:25,
+    fontWeight:'bold',
+    color:"green",
+  },
+  resultado: {
+    alignSelf:"center",
+    color:"lightgray",
+    fontSize:45,
+    fontWeight:'bold',
+    padding:6,
+  },
 });
