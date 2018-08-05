@@ -47,9 +47,9 @@ export default class App extends React.Component {
           <TextInput autoCapitalize="none" placeholder="Altura" keyboardType="numeric" style={styles.input} onChangeText={(altura)=>{this.setState({altura})}}></TextInput>
           <TextInput autoCapitalize="none" placeholder="Massa" keyboardType="numeric" style={styles.input} onChangeText={(massa)=>{this.setState({massa})}}></TextInput>
         </View>
-        <TouchableOpacity ></TouchableOpacity>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
+        <TouchableOpacity style={styles.button} onPress={this.calcular}><Text style={styles.buttontext}>Calcular</Text></TouchableOpacity>
+        <Text style={styles.resultado}>{this.state.resultado.toFixed(2)}</Text>
+        <Text style={[styles.resultado,{fontSize:20}]}>{this.state.resultadoText}</Text>
        
       </View>
     );
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    
   },
   entrada: {
     flexDirection: 'row',
