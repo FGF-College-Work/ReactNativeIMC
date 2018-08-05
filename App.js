@@ -12,7 +12,31 @@ export default class App extends React.Component {
     let imc = this.state.massa / (this.state.altura * this.state.altura)
     let s = this.state
     s.resultado = imc
-    
+    if(s.resultado < 16){
+      s.resultadoText = 'Muito abaixo do peso'
+    }
+    else if(s.resultado < 17){
+      s.resultadoText = 'Moderamente abaixo do peso'
+    }
+    else if (s.resultado < 18.5){
+      s.resultadoText = 'Abaixo do peso'
+    }
+    else if (s.resultado < 25){
+      s.resultadoText = 'Saudavel'
+    }
+    else if (s.resultado < 30){
+      s.resultadoText = 'Sobrepeso'
+    }
+    else if (s.resultado < 35){
+      s.resultadoText = 'Obesidade Grau 1°'
+    }
+    else if (s.resultado < 40){
+      s.resultadoText = 'Obesidade Grau 2°'
+    }
+    else{
+      s.resultadoText = 'Obesidade Grau 3°'
+    }
+    this.setState(s)
   }
 
 
